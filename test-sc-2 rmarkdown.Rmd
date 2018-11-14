@@ -30,7 +30,13 @@ oil_spills <- read_csv("~/github/test-sc-2/oil_spills.csv")
 
 ```{r texas_only}
 
-texas_only <- filter(oil_spills, oil_spills$`Accident State` == "TX")
+texas_spills <- filter(oil_spills, oil_spills$`Accident State` == "TX" & oil_spills$`Accident Year`<2017) %>% 
+  group_by(`Accident Year`) %>% 
+  summarise(Loss = sum(`Net Loss (Barrels)`))
 
+colnames(texas_spills) <- c("Year", "Losses")
+
+ggplot(texas_spills, aes(x=Year, y=Losses)) +
+  geom_col()
 ```
 
