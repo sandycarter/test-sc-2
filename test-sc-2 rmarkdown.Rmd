@@ -28,3 +28,9 @@ oil_spills <- read_csv("~/github/test-sc-2/oil_spills.csv")
 
 ```
 
+```{r texas_only}
+
+texas_only <- filter(oil_spills, oil_spills$`Accident State` == "TX")
+
+```
+
