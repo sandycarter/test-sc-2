@@ -18,3 +18,13 @@ knitr::opts_chunk$set(echo = TRUE)
 #BLEEP BLORP TEST CODE
 
 #WUT
+
+```{r loadlib}
+
+
+library(tidyverse)
+library(readr)
+oil_spills <- read_csv("~/github/test-sc-2/oil_spills.csv")
+
+```
+
